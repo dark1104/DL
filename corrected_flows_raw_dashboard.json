@@ -1,0 +1,95 @@
+{
+  "version": "1.0.0",
+  "type": "dashboard",
+  "dashboard_title": "Network Flow Dashboard",
+  "position": {},
+  "metadata": {},
+  "datasources": {
+    "flows_raw": {
+      "database": {
+        "name": "ClickHouse"
+      },
+      "schema": "",
+      "table": "flows_raw",
+      "columns": [],
+      "metrics": []
+    }
+  },
+  "charts": [
+    {
+      "slice_name": "Top ASN Organizations by Flow Count",
+      "viz_type": "bar",
+      "params": {
+        "metrics": [
+          "count"
+        ],
+        "groupby": [
+          "asn_organization"
+        ],
+        "adhoc_filters": [],
+        "row_limit": 50,
+        "order_desc": true,
+        "time_range": "No filter",
+        "granularity_sqla": "flow_start_time",
+        "time_grain_sqla": "day"
+      },
+      "datasource_name": "flows_raw"
+    },
+    {
+      "slice_name": "Flows by City",
+      "viz_type": "bar",
+      "params": {
+        "metrics": [
+          "count"
+        ],
+        "groupby": [
+          "city_name"
+        ],
+        "adhoc_filters": [],
+        "row_limit": 50,
+        "order_desc": true,
+        "time_range": "No filter",
+        "granularity_sqla": "flow_start_time",
+        "time_grain_sqla": "day"
+      },
+      "datasource_name": "flows_raw"
+    },
+    {
+      "slice_name": "Flows by ISO Country Code",
+      "viz_type": "bar",
+      "params": {
+        "metrics": [
+          "count"
+        ],
+        "groupby": [
+          "iso_code"
+        ],
+        "adhoc_filters": [],
+        "row_limit": 50,
+        "order_desc": true,
+        "time_range": "No filter",
+        "granularity_sqla": "flow_start_time",
+        "time_grain_sqla": "day"
+      },
+      "datasource_name": "flows_raw"
+    },
+    {
+      "slice_name": "Country Flow Volume",
+      "viz_type": "pie",
+      "params": {
+        "metrics": [
+          "sum__octetDeltaCount"
+        ],
+        "groupby": [
+          "country_name"
+        ],
+        "adhoc_filters": [],
+        "row_limit": 25,
+        "time_range": "No filter",
+        "granularity_sqla": "flow_start_time",
+        "time_grain_sqla": "day"
+      },
+      "datasource_name": "flows_raw"
+    }
+  ]
+}
