@@ -1,0 +1,93 @@
+{
+  "dashboard_title": "Flows Raw Charts (Single File)",
+  "position": {},
+  "metadata": {},
+  "slices": [
+    {
+      "slice_name": "Top ASN Organizations by Flow Count",
+      "viz_type": "bar",
+      "params": {
+        "metrics": [
+          "count"
+        ],
+        "groupby": [
+          "asn_organization"
+        ],
+        "row_limit": 50,
+        "order_desc": true,
+        "granularity_sqla": "flow_start_time",
+        "time_grain_sqla": "day",
+        "time_range": "No filter"
+      },
+      "uuid": "30558bb7-dec5-4692-8f60-72beb61d0a40",
+      "datasource_name": "flows_raw",
+      "datasource_id": 0,
+      "datasource_type": "table"
+    },
+    {
+      "slice_name": "Flows by City",
+      "viz_type": "bar",
+      "params": {
+        "metrics": [
+          "count"
+        ],
+        "groupby": [
+          "city_name"
+        ],
+        "row_limit": 50,
+        "order_desc": true,
+        "granularity_sqla": "flow_start_time",
+        "time_grain_sqla": "day",
+        "time_range": "No filter"
+      },
+      "uuid": "f1bf3a3e-2481-4551-89ad-7d70d2352a01",
+      "datasource_name": "flows_raw",
+      "datasource_id": 0,
+      "datasource_type": "table"
+    },
+    {
+      "slice_name": "Flows by ISO Country Code",
+      "viz_type": "bar",
+      "params": {
+        "metrics": [
+          "count"
+        ],
+        "groupby": [
+          "iso_code"
+        ],
+        "row_limit": 50,
+        "order_desc": true,
+        "granularity_sqla": "flow_start_time",
+        "time_grain_sqla": "day",
+        "time_range": "No filter"
+      },
+      "uuid": "37ce8fa3-5229-4001-ba50-c636fb67b54b",
+      "datasource_name": "flows_raw",
+      "datasource_id": 0,
+      "datasource_type": "table"
+    },
+    {
+      "slice_name": "Country Flow Volume",
+      "viz_type": "pie",
+      "params": {
+        "metrics": [
+          "sum__octetDeltaCount"
+        ],
+        "groupby": [
+          "country_name"
+        ],
+        "row_limit": 25,
+        "granularity_sqla": "flow_start_time",
+        "time_grain_sqla": "day",
+        "time_range": "No filter"
+      },
+      "uuid": "8ace3dcb-23d3-4c1f-a03b-f18f85fd9f74",
+      "datasource_name": "flows_raw",
+      "datasource_id": 0,
+      "datasource_type": "table"
+    }
+  ],
+  "uuid": "1c8d93d5-f4bc-4c01-989c-c25169846740",
+  "version": "1.0.0",
+  "published": true
+}
